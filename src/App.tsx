@@ -1,10 +1,17 @@
+import { Container } from "./components/Container"
 import { Heading } from "./components/Heading"
+import { Logo } from "./components/Logo"
 
 export function App() {
 
   return (
     <>
-      <Heading attr={123} attr2={'string'}>Olá mundo!</Heading>
+      <Container>
+        <Logo />
+      </Container>
+      <Container>
+        <Heading>MENU</Heading>
+      </Container>
     </>
   )
 }
