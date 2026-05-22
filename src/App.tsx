@@ -1,5 +1,8 @@
+import { PlayCircleIcon } from "lucide-react";
+import { Button } from "./components/Button";
 import { Container } from "./components/Container"
 import { Countdown } from "./components/Countdown";
+import { Cycles } from "./components/Cycles";
 import { Input } from "./components/Input";
 import { Logo } from "./components/Logo"
 import { Menu } from "./components/Menu";
@@ -11,37 +14,36 @@ export function App() {
 
   return (
     <>
-      <Container>
-        <Logo />
-      </Container>
+        <Container>
+            <Logo />
+        </Container>
 
-      <Container>
-        <Menu />
-      </Container>
+        <Container>
+            <Menu />
+        </Container>
 
-      <Container>
-        <Countdown />
-      </Container>
-    
-      <Container>
-        <form className="form" action="">
-          <div className="formRow">
-            <Input id="meuInput" type="text" label="Task" placeholder="Digite sua tarefa" disabled defaultValue='valor preenchido'/>
-          </div>
+        <Container>
+            <Countdown />
+        </Container>
 
-          <div className="formRow">
-            <p>
-              Lorem ipsum dolor sit amet.
-            </p>
-          </div>
+        <Container>
+            <form className="form" action="">
+            <div className="formRow">
+            <Input id="meuInput" type="text" label="Task" placeholder="Digite sua tarefa" />
+            </div>
 
-          <div className="formRow">
-            <p>Ciclos</p>
-            <p>0 0 0 0 0 0 0 0</p>
-          </div>
-          <button>Enviar</button>
-        </form>
-      </Container>
+            <div className="formRow">
+                <p>
+                    Lorem ipsum dolor sit amet.
+                </p>
+            </div>
+
+            <div className="formRow">
+                <Cycles />
+            </div>
+                <Button icon={<PlayCircleIcon />} />
+            </form>
+        </Container>
     </>
   )
 }
