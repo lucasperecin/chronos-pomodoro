@@ -65,6 +65,7 @@ export function MainForm() {
                     // value={taskName}
                     // onChange={(e) => setTaskName(e.target.value)}
                     ref={taskNameInput}
+                    disabled={!!state.activeTask}
                 />
                 </div>
 
@@ -74,9 +75,12 @@ export function MainForm() {
                     </p>
                 </div>
 
-                <div className="formRow">
-                    <Cycles />
-                </div>
+                {state.currentCycle > 0 && (
+                    <div className="formRow">
+                        <Cycles />
+                    </div>
+                )}
+                
                 <Button icon={<PlayCircleIcon />} />
             </form>
         )
