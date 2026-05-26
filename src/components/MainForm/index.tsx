@@ -1,4 +1,4 @@
-import { PauseCircleIcon, PlayCircleIcon, StopCircleIcon } from "lucide-react";
+import { PlayCircleIcon, StopCircleIcon } from "lucide-react";
 import { Button } from "../Button";
 import { Cycles } from "../Cycles";
 import { Input } from "../Input";
@@ -61,6 +61,12 @@ export function MainForm() {
                 activeTask: null,
                 secondsRemaining: 0,
                 formattedSecondsRemaining: '00:00',
+                tasks: prevState.tasks.map(task => {
+                    if (prevState.activeTask && prevState.activeTask.id === task.id) {
+                        return {...task, interruptDate: Date.now()};
+                    }
+                    return task;
+                })
             }
         })
     }
